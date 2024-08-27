@@ -1,0 +1,57 @@
+# Url Api
+http://localhost:7000/api/
+
+php -S localhost:7000
+
+### Login
+# Login to get a Token
+POST http://localhost:7000/api/auth.php
+Content-Type: application/json
+
+{
+    "username": "username1",
+    "password": "password1"
+}
+
+### Get All Tasks
+GET http://localhost:7000/api/tasks.php
+
+### Get by Id
+GET http://localhost:7000/api/tasks.php?task_ides=1
+
+### Create Task
+POST http://localhost:7000/api/tasks.php
+Content-Type: application/json
+
+{
+    "title": "Task Title",
+    "description": "Task Description",
+    "token": "3f9a4a3c08cd50c8ab1a4ba445f8e5c2"
+}
+
+### Create Task With Token in Headers
+POST http://localhost:7000/api/tasks.php
+Token: 3f9a4a3c08cd50c8ab1a4ba445f8e5c2
+Content-Type: application/json
+
+{
+    "title": "Task Title",
+    "description": "Task Description",
+}
+
+### Update Task
+
+PUT http://localhost:7000/api/tasks.php
+Content-Type: application/json
+
+{
+    "task_id": 1,
+    "title": "Updated Task Title",
+    "description": "Updated Task Description",
+    "token": "990e5d5f1cad12d365aafc6fe647b481"
+}
+
+### Delete Task
+DELETE http://localhost:7000/api/tasks.php?task_id=14
+token: 3f9a4a3c08cd50c8ab1a4ba445f8e5c2
+Content-Type: application/json
